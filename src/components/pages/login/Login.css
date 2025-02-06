@@ -3,20 +3,31 @@ form{
     display: flex;
     justify-content: center;
     width: 400px;
+    max-width: 500px;
     height: auto;
     padding: 20px 15px;
     margin: 0 auto;
     flex-direction: column;
     box-sizing: border-box;
     border: solid 1px ;
-    border-radius: 5px;
+    border-radius: 15px;
     background-color: #F5F5F5;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 
 }
 
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+
 input[type="email"],
 input[type="password"]{
+    border: solid 3px;
     padding: 5px;
     width: 100%;
     box-sizing: border-box;
@@ -39,6 +50,7 @@ button{
     color: white;
     border-radius: 5px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s;
 }
 
 
@@ -51,6 +63,7 @@ input:hover{
 button:hover{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    opacity: 0.8;
 }
 
 
