@@ -23,14 +23,18 @@ form{
     align-items: center;
     width: 100vw;
     height: 100vh;
+    font-size: large;
 }
 
 
 input[type="email"],
-input[type="password"]{
+input[type="password"],
+input[type="text"]{
     border: none;
     background-color:#F5F5F5 ;
     outline: 0;
+    width: 80%;
+    height: 100%;
    
 }
 
@@ -46,11 +50,16 @@ input[type="password"]{
     transition: border-color 0.3s;
     outline: 0;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
 }
 
-.input-container span{
+.input-container div{
+    display: flex;
+    justify-content: right;
     margin: 0px 1px;
     font-size: 13px;
+    width: 20%;
+    box-sizing: border-box;
 }
 
 h1{

@@ -1,16 +1,9 @@
+// src/App.tsx
+import React from 'react';
+import { Navigate } from 'react-router-dom';
 
-import { auth } from './firebase';
-import './App.css'
+const App: React.FC = () => {
+  return <Navigate to="/login" replace />;
+};
 
-function App() {
-
-console.log("Firebase Auth:", auth);
-
-  return (
-    <>
-  <h1>Test</h1>
-    </>
-  )
-}
-
-export default App
+export default App;

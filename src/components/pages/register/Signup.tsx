@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa6";
-import "./Login.css";
+import "../login/Login.css";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -22,11 +22,11 @@ const Login = () => {
     setError("");
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard"); // Reindirizza alla dashboard dopo il login
+      await createUserWithEmailAndPassword(auth, email, password);
+      navigate("/dashboard"); // Reindirizza alla dashboard dopo la registrazione
     } catch (error) {
-      setError("Failed to login. Please check your email and password.");
-      console.error("Login error:", error); // Debug
+      setError("Failed to create an account. Please try again.");
+      console.error("Signup error:", error); // Debug
     }
   };
 
@@ -35,7 +35,7 @@ const Login = () => {
       {error && <p style={{ color: "red" }}>{error}</p>}
       <div className="form-container">
         <form onSubmit={handleSubmit}>
-          <h1>Login</h1>
+          <h1>Register</h1>
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <div className="input-container">
@@ -66,11 +66,11 @@ const Login = () => {
               </div>
             </div>
           </div>
-          <button type="submit">Log in</button>
+          <button type="submit">Sign up</button>
         </form>
       </div>
     </>
   );
 };
 
-export default Login;
+export default Signup;
