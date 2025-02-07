@@ -66,15 +66,19 @@ h1{
     color: #333333;
 }
 
-button{
-    width: 100%;
-    padding: 10px 0;
-    margin: 5x 0;
+.btn{
     background-color: #001F3F;
     color: white;
     border-radius: 5px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     transition: opacity 0.3s;
+}
+
+.auth{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5x 0;
+
 }
 
 
