@@ -9,6 +9,7 @@ import "./Dashboard.css";
 const Dashboard = () => {
   const [newListName, setNewListName] = useState("");
   const [lists, setLists] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   const loadLists = async () => {
@@ -19,6 +20,7 @@ const Dashboard = () => {
 
     try {
       const listData = await fetchLists();
+      setLoading(false);
       setLists(listData);
     } catch (error) {
       console.error("Error fetching lists:", error);
@@ -68,7 +70,10 @@ const Dashboard = () => {
           Add List
         </button>
       </div>
-      {lists.length === 0 ? (
+      {
+        loading && <div className="loading empty-container">Loading...</div>
+      }
+      {lists.length === 0 && loading === false ? (
         <div className="empty-container">No lists found</div>
       ) : (
         <div className="grid-cards">
