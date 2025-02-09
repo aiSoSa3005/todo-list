@@ -1,15 +1,11 @@
 .container {
-  width: 70vw;
+  width:80vw;
   overflow: hidden;
   height: 100vh;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
-  border: solid 3px;
   padding: 3px 10px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .container input {
@@ -21,6 +17,7 @@
   padding: 5px;
   font-size: large;
   transition: border 0.3s;
+  flex: 2;
 }
 .container input:hover{ 
     border: solid 2px  dodgerblue;
@@ -41,6 +38,7 @@
 
 .input-lists {
   padding: 7px 10px;
+  margin: 0 4px;
 }
 
 
@@ -51,6 +49,4 @@
     margin-top: 10px;
 }
 
-.card{
-    
-}
+

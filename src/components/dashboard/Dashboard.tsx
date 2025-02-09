@@ -1,6 +1,7 @@
-import '../pages/login/Login.css'
-import './Dashboard.css'
-import '../../App.css'
+import "../pages/login/Login.css";
+import "./Dashboard.css";
+import "../../App.css";
+import Card from "../card/Card";
 const Dashboard = () => {
   return (
     <>
@@ -16,8 +17,14 @@ const Dashboard = () => {
           />
           <button className="btn input-lists">Add List</button>
         </div>
-
-        <div className="grid-cards"></div>
+        <div className="grid-cards">
+          <Card title="Jailbug" users={2} ></Card>
+          <Card title="IndoorCourt" users={5} ></Card>
+          <Card title="RoadMap AI" users={3} ></Card>
+          <Card title="Jailbug" users={2} ></Card>
+          <Card title="IndoorCourt" users={5} ></Card>
+          <Card title="RoadMap AI" users={3} ></Card>
+        </div>
       </div>
     </>
   );
