@@ -6,6 +6,8 @@
   margin: 0 auto;
   flex-direction: column;
   padding: 3px 10px;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
 }
 
 .container input {
@@ -18,11 +20,21 @@
   font-size: large;
   transition: border 0.3s;
   flex: 2;
+  box-sizing: border-box;
 }
 .container input:hover{ 
     border: solid 2px  dodgerblue;
     outline: 0;
     
+}
+
+.empty-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #333333;
+  font-size: 1.5rem;
 }
 
 .container h1 {
