@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/pages/login/Login.tsx';
 import '@fontsource/inter/400.css'; 
 import Signup from './components/pages/register/Signup.tsx';
-import Dashboard from './components/dashboard/Dashboard.tsx';
+import Dashboard from './components/pages/dashboard/Dashboard.tsx';
+import ListPage from './components/pages/listpage/ListPage.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -16,6 +17,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path='/listpage' element={<ListPage/>} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </Router>

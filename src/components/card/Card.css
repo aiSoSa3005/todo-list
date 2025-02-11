@@ -9,10 +9,16 @@
   flex-direction: column;
   justify-content: center;
   margin: 10px 5px;
+  cursor: pointer;
+  transition: transform 0.3s ;
 }
 
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.card:hover{
+  transform: scale(1.05);
 }

@@ -21,6 +21,7 @@
   transition: border 0.3s;
   flex: 2;
   box-sizing: border-box;
+  box-shadow: -2px -4px 5px rgba(0, 0, 0, 0.1);
 }
 .container input:hover{ 
     border: solid 2px  dodgerblue;

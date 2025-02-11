@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { auth } from "../../firebase";
+import { auth } from "../../../firebase";
 import { useNavigate } from "react-router-dom";
-import { fetchLists } from "../../service/lists";
+import { fetchLists } from "../../../service/lists";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-import Card from "../card/Card";
+import Card from "../../card/Card";
 import "./Dashboard.css";
 
 const Dashboard = () => {
