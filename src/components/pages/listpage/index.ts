@@ -1,3 +1,3 @@
-import ListPage from "./ListPage";
+import TaskPage from "./TaskPage";
 
-export default ListPage
+export default TaskPage
