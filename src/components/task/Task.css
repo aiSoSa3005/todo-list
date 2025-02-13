@@ -1,0 +1,74 @@
+.task {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    width: 95%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-content {
+    flex: 2;
+    margin-left: 10px; 
+  }
+  
+  .task-content.completed {
+    text-decoration: line-through; 
+    color: gray; 
+  }
+  
+  .task-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0;
+  }
+  
+  .edit,
+  .delete {
+    margin: 0 5px;
+    padding: 5px 2px;
+    width: 50px;
+  }
+  
+  /* Stili per la checkbox personalizzata */
+  .custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .hidden-checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .checkbox-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .hidden-checkbox:checked + .checkbox-icon {
+    background-color: #06478b;
+    border-color: #06478b;
+  }
+  
+  .hidden-checkbox:checked + .checkbox-icon::after {
+    content: "✔";
+    display: block;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+  }

@@ -1,22 +1,24 @@
+import Task from '../../task/Task'
 import './TaskPage.css'
+import { useState } from 'react'
 
 const TaskPage = () => {
+  const [tasks, setTasks] = useState(['Work', 'Study', 'Code', 'Have fun', 'Code', 'Code', 'Code', 'Code', 'Code', 'Code', 'Code', 'Code'])
+
   return (
     <div className='container-task'>
-        <h1>To-do</h1>
+        <div className="capabilities">
+          <h1>To-do</h1>
+          <button className="btn add-task">Add task</button>
+        </div>
 
+     
         <div className="task-container">
-          <div className="task">Work</div>
-          <div className="task">Study</div>
-          <div className="task">Code</div>l
-          <div className="task">Have fun</div>
-          <div className="task">Code</div>
-          <div className="task">Code</div>
-          <div className="task">Code</div>
-          <div className="task">Code</div>
-          <div className="task">Code</div>
-          <div className="task">Code</div>
-          <div className="task">Code</div>
+        {
+          tasks.map((task,index) =>(
+            <Task key={index} text={task} isCompleted={true}/>
+          ))
+        }
         </div>
     </div>
   )

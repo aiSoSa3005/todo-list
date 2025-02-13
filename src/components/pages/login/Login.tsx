@@ -47,6 +47,7 @@ const Login = () => {
                 placeholder="Enter your email"
                 required
               />
+              <div></div>
             </div>
           </div>
 
@@ -62,11 +63,17 @@ const Login = () => {
                 required
               />
               <div onClick={handleVisibility}>
-                {isVisible ? <FaRegEye size={15} /> : <FaRegEyeSlash size={15} />}
+                {isVisible ? (
+                  <FaRegEye size={15} />
+                ) : (
+                  <FaRegEyeSlash size={15} />
+                )}
               </div>
             </div>
           </div>
-          <button className="btn auth" type="submit">Log in</button>
+          <button className="btn auth" type="submit">
+            Log in
+          </button>
         </form>
       </div>
     </>

@@ -1,5 +1,6 @@
 
 form{
+    font-family: 'Inter', sans-serif;
     display: flex;
     justify-content: center;
     width: 400px;
@@ -31,10 +32,12 @@ input[type="email"],
 input[type="password"],
 input[type="text"]{
     border: none;
-    background-color:#F5F5F5 ;
+    background-color:#fff ;
     outline: 0;
-    width: 80%;
     height: 100%;
+    padding: 6px 3px;
+    flex: 2;
+    
    
 }
 
@@ -42,7 +45,6 @@ input[type="text"]{
     display: flex;
     justify-content: space-between;
     border: solid 2px #e0e0e0;
-    padding: 7px 3px;
     width: 100%;
     box-sizing: border-box;
     margin: 7px 0;
@@ -51,6 +53,7 @@ input[type="text"]{
     outline: 0;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
     height: 100%;
+    box-sizing: border-box;
 }
 
 .input-container div{
@@ -58,8 +61,10 @@ input[type="text"]{
     justify-content: right;
     margin: 0px 1px;
     font-size: 13px;
-    width: 20%;
     box-sizing: border-box;
+    background-color: #fff;
+    padding: 5px 3px;
+    flex: 0;
 }
 
 h1{
