@@ -17,7 +17,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path='/taskpage' element={<TaskPage/>} />
+        <Route path='/taskpage/:listId' element={<TaskPage/>} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </Router>

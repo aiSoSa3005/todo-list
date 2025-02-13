@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { auth } from "../../../firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { fetchLists } from "../../../service/lists";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import Card from "../../card/Card";
@@ -78,7 +78,9 @@ const Dashboard = () => {
       ) : (
         <div className="grid-cards">
           {lists.map((list) => (
-            <Card key={list.id} title={list.name} users={list.users.length} />
+            <Link to ={`/list/${list.id}`}>
+              <Card key={list.id} title={list.name} users={list.users.length}  />
+            </Link>
           ))}
         </div>
       )}
