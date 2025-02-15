@@ -39,6 +39,7 @@
 }
 
 .container h1 {
+  margin-bottom: 10px;
   color: #333333;
   text-align: center;
 }
@@ -61,5 +62,17 @@
     gap: 10px;
     margin-top: 10px;
 }
+
+.card-links {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease; 
+}
+
+.card-links:hover {
+  opacity: 0.8; 
+}
+
+
 
 

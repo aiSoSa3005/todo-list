@@ -78,7 +78,7 @@ const Dashboard = () => {
       ) : (
         <div className="grid-cards">
           {lists.map((list) => (
-            <Link to ={`/list/${list.id}`}>
+            <Link to ={`/taskpage/${list.id}`} className="card-links">
               <Card key={list.id} title={list.name} users={list.users.length}  />
             </Link>
           ))}
