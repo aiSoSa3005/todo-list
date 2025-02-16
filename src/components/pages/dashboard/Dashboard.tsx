@@ -2,10 +2,15 @@ import React, { useEffect, useState } from "react";
 import { auth } from "../../../firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { fetchLists } from "../../../service/lists";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 import Card from "../../card/Card";
 import "./Dashboard.css";
-
 
 const Dashboard = () => {
   const [newListName, setNewListName] = useState("");
@@ -43,9 +48,9 @@ const Dashboard = () => {
         name: newListName,
         users: [auth.currentUser?.uid],
       };
-      await addDoc(listsRef, newList); // AGGIUNGE LA NUOVA LISTA AL DATABASE
+      const docRef = await addDoc(listsRef, newList); // AGGIUNGE LA NUOVA LISTA AL DATABASE
 
-      setLists((prevLists) => [...prevLists, { id: "temp-id", ...newList }]); // ID TEMPORANEO  PER AGGIUNGERE LA NUOVA LISTA
+      setLists((prevLists) => [...prevLists, { id: docRef.id, ...newList }]); // ID TEMPORANEO  PER AGGIUNGERE LA NUOVA LISTA
       setNewListName("");
 
       await loadLists(); // RICARICA LE LISTE
@@ -53,7 +58,17 @@ const Dashboard = () => {
       console.error("Error creating list:", error);
     }
   };
-
+  const deleteList = async (listId: string) => {
+    try {
+      const db = getFirestore();
+      const listRef = doc(db, "lists", listId);
+      await deleteDoc(listRef);
+  
+      setLists((prevLists) => prevLists.filter(list => list.id !== listId));
+    } catch (error) {
+      console.error("Error deleting list:", error);
+    }
+  };
   return (
     <div className="container">
       <h1>Dashboard</h1>
@@ -71,16 +86,22 @@ const Dashboard = () => {
           Add List
         </button>
       </div>
-      {
-        loading && <div className="loading empty-container">Loading...</div>
-      }
+      {loading && <div className="loading empty-container">Loading...</div>}
       {lists.length === 0 && loading === false ? (
         <div className="empty-container">No lists found</div>
       ) : (
         <div className="grid-cards">
           {lists.map((list) => (
-            <Link to ={`/taskpage/${list.id}`} className="card-links">
-              <Card key={list.id} title={list.name} users={list.users.length}  />
+            <Link to={`/taskpage/${list.id}`} className="card-links">
+              <Card
+                key={list.id}
+                title={list.name}
+                users={list.users.length}
+                deleteCard={(e: React.MouseEvent) => {
+                  e.preventDefault(); 
+                  deleteList(list.id);
+                }}
+              />
             </Link>
           ))}
         </div>

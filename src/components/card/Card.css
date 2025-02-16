@@ -17,6 +17,13 @@
   justify-content: space-between;
   align-items: center;
 }
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+  color: #001F3F;
+  align-items: center;
+}
 
 .card:hover{
   transform: scale(1.05);
