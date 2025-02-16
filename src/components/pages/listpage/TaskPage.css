@@ -48,10 +48,19 @@ h1 {
   margin: 8px 0;
   padding: 5px 10px;
   width: auto;
+  display: flex;
+  align-items: center;
+}
+
+.add-task span{
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
 }
 
 .filter {
   width: 73px;
+  height: 28px;
   padding: 5px 2px;
   margin-left: 5px;
   background-color: #fff;
@@ -59,4 +68,14 @@ h1 {
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s;
+}
+
+.filter span{
+  color:#001F3F ;
+  margin-right: 4px;
+}
+
+.header-btns{
+  display: flex;
+  align-items: center;
 }

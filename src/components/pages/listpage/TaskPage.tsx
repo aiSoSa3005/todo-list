@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import Task from "../../task/Task";
 import "./TaskPage.css";
 import { useEffect, useState } from "react";
+import { FaPlus } from "react-icons/fa6";
+import { FaFilter } from "react-icons/fa";
 import {
   collection,
   getFirestore,
@@ -89,11 +91,13 @@ const TaskPage = () => {
         <div className="capabilities">
           <h1 id="task-h1">To-do</h1>
 
-          <div>
+          <div className="header-buttons">
             <button className="btn add-task" onClick={handlePopup}>
-              Add task
+            <span>
+              <FaPlus /> 
+            </span>New task
             </button>
-          <button className="btn filter">Filter</button>
+          <button className="btn filter"><span><FaFilter /></span>Filter</button>
           </div>
         </div>
 
