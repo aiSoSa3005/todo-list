@@ -3,7 +3,7 @@ import "./Task.css";
 interface Props {
   text: string;
   isCompleted: boolean; 
-  onToggleComplete?: () => void; 
+  onToggleComplete: () => void; 
 }
 
 const Task = ({ text, isCompleted, onToggleComplete }: Props) => {

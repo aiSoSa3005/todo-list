@@ -1,5 +1,5 @@
 .container-task {
-    font-family: 'inter', sans-serif;
+  font-family: "inter", sans-serif;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -12,7 +12,6 @@
   margin: 0 auto;
   box-sizing: border-box;
 }
-
 
 .task-container {
   display: flex;
@@ -29,8 +28,6 @@
   display: none;
 }
 
-
-
 .capabilities {
   display: flex;
   width: auto;
@@ -41,15 +38,25 @@
   align-items: center;
   box-sizing: border-box;
   padding: 15px 5px;
-  
-  
 }
 
-h1{
-    margin: 0;
+h1 {
+  margin: 0;
 }
 
-.add-task{
-   margin: 8px 0 ;
-    padding: 5px 10px;
+.add-task {
+  margin: 8px 0;
+  padding: 5px 10px;
+  width: auto;
+}
+
+.filter {
+  width: 73px;
+  padding: 5px 2px;
+  margin-left: 5px;
+  background-color: #fff;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s;
 }

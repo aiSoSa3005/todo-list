@@ -6,6 +6,7 @@ import { getFirestore, collection, addDoc } from "firebase/firestore";
 import Card from "../../card/Card";
 import "./Dashboard.css";
 
+
 const Dashboard = () => {
   const [newListName, setNewListName] = useState("");
   const [lists, setLists] = useState<any[]>([]);

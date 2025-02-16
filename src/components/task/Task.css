@@ -29,6 +29,12 @@
     justify-content: space-between;
     flex: 0;
   }
+
+  #task-h1{
+    margin: 10px 0;
+  }
+
+  
   
   .edit,
   .delete {
