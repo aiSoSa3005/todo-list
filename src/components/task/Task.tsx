@@ -4,9 +4,10 @@ interface Props {
   text: string;
   isCompleted: boolean; 
   onToggleComplete: () => void; 
+  deleteTask: () => void;
 }
 
-const Task = ({ text, isCompleted, onToggleComplete }: Props) => {
+const Task = ({ text, isCompleted, onToggleComplete,deleteTask }: Props) => {
   return (
     <div className="task">
       {/* Checkbox  */}
@@ -28,7 +29,7 @@ const Task = ({ text, isCompleted, onToggleComplete }: Props) => {
       {/* Tasks Buttons */}
       <div className="task-actions">
         <button className="btn edit">Edit</button>
-        <button className="btn delete">Delete</button>
+        <button onClick={deleteTask} className="btn delete">Delete</button>
       </div>
     </div>
   );

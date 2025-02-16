@@ -11,6 +11,7 @@ import {
   addDoc,
   updateDoc,
   doc,
+  deleteDoc
 } from "firebase/firestore";
 import Popupform from "../../popupform";
 
@@ -63,6 +64,17 @@ const TaskPage = () => {
     fetchTasks();
   };
 
+  const deleteTask = async (taskId: string) => {
+    const db = getFirestore();
+    const taskRef = doc(db, "lists", listId!, "tasks", taskId);
+    await deleteDoc(taskRef);
+
+    fetchTasks();
+
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
+  }
+
+
   const handleToggleComplete = async (taskId: string, isCompleted: boolean) => {
     const db = getFirestore();
     const taskRef = doc(db, "lists", listId!, "tasks", taskId); //Aggiorno lo stato nel database
@@ -91,7 +103,7 @@ const TaskPage = () => {
         <div className="capabilities">
           <h1 id="task-h1">To-do</h1>
 
-          <div className="header-buttons">
+          <div className="header-btns">
             <button className="btn add-task" onClick={handlePopup}>
             <span>
               <FaPlus /> 
@@ -108,6 +120,7 @@ const TaskPage = () => {
               onToggleComplete={() =>
                 handleToggleComplete(task.id, task.isCompleted)
               }
+              deleteTask={() => deleteTask(task.id)}
               key={task.id}
               text={task.description}
               isCompleted={task.isCompleted}
