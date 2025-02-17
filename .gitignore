@@ -25,4 +25,4 @@ dist-ssr
 
 
 
-firebase.ts
+/src/firebase.ts
