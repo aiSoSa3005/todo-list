@@ -105,3 +105,13 @@ button:hover{
     padding: 5px;
     margin: 10px 0;
 }
+
+
+@media screen and (max-width: 600px){
+    form{
+        width: 350px;
+        padding: 10px 10px ;
+    }
+    
+    
+}

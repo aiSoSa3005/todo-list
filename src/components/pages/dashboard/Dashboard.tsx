@@ -29,7 +29,7 @@ const Dashboard = () => {
       setLoading(false);
       setLists(listData);
     } catch (error) {
-      console.error("Error fetching lists:", error);
+      
     }
   };
 
@@ -66,7 +66,7 @@ const Dashboard = () => {
   
       setLists((prevLists) => prevLists.filter(list => list.id !== listId));
     } catch (error) {
-      console.error("Error deleting list:", error);
+      
     }
   };
   return (
