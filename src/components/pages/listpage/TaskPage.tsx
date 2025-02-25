@@ -1,9 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Task from "../../task/Task";
 import "./TaskPage.css";
 import { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa6";
 import { FaFilter } from "react-icons/fa";
+import { IoMdHome } from "react-icons/io";
 import {
   collection,
   getFirestore,
@@ -25,6 +26,7 @@ const TaskPage = () => {
   const [tasks, setTasks] = useState<TaskType[]>([]);
   const [showPopup, setShowPopup] = useState(false);
   const { listId } = useParams();
+  const navigate = useNavigate();
 
   const fetchTasks = async () => {
     const db = getFirestore();
@@ -97,8 +99,10 @@ const TaskPage = () => {
     );
   };
 
+
   return (
     <>
+    <span id="icon-span" onClick={()=> navigate('/dashboard')}><IoMdHome size={30} /></span>
       <div className="container-task">
         <div className="capabilities">
           <h1 id="task-h1">To-do</h1>

@@ -52,7 +52,7 @@ h1 {
   align-items: center;
 }
 
-.add-task span{
+.add-task span {
   display: flex;
   align-items: center;
   margin-right: 4px;
@@ -70,12 +70,32 @@ h1 {
   transition: opacity 0.3s;
 }
 
-.filter span{
-  color:#001F3F ;
+.filter span {
+  color: #001f3f;
   margin-right: 4px;
 }
 
-.header-btns{
+.header-btns {
   display: flex;
   align-items: center;
 }
+
+#icon-span {
+  display: flex;
+  border-radius: 20px;
+  padding: 5px;
+  margin-right: 5px;
+  border: solid 3px #001f3f;
+  width: 30px;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #001f3f;
+}
+
+#icon-span:hover {
+  background-color: #001f3f;
+  color: white;
+}
+
+
