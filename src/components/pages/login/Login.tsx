@@ -33,48 +33,49 @@ const Login = () => {
   return (
     <>
       {error && <p style={{ color: "red" }}>{error}</p>}
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <h1>Login</h1>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <div className="input-container">
-              <input
-                onChange={(e) => setEmail(e.target.value)}
-                type="email"
-                value={email}
-                id="email"
-                placeholder="Enter your email"
-                required
-              />
-              <div></div>
-            </div>
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <div className="input-container">
-              <input
-                onChange={(e) => setPassword(e.target.value)}
-                type={isVisible ? "text" : "password"}
-                value={password}
-                id="password"
-                placeholder="Enter your password"
-                required
-              />
-              <div onClick={handleVisibility}>
-                {isVisible ? (
-                  <FaRegEye size={15} />
-                ) : (
-                  <FaRegEyeSlash size={15} />
-                )}
+      <div className="login-page">
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <h1>Login</h1>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <div className="input-container">
+                <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  type="email"
+                  value={email}
+                  id="email"
+                  placeholder="Enter your email"
+                  required
+                />
+                <div></div>
               </div>
             </div>
-          </div>
-          <button className="btn auth" type="submit">
-            Log in
-          </button>
-        </form>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <div className="input-container">
+                <input
+                  onChange={(e) => setPassword(e.target.value)}
+                  type={isVisible ? "text" : "password"}
+                  value={password}
+                  id="password"
+                  placeholder="Enter your password"
+                  required
+                />
+                <div onClick={handleVisibility}>
+                  {isVisible ? (
+                    <FaRegEye size={15} />
+                  ) : (
+                    <FaRegEyeSlash size={15} />
+                  )}
+                </div>
+              </div>
+            </div>
+            <button className="btn auth" type="submit">
+              Log in
+            </button>
+          </form>
+        </div>
       </div>
     </>
   );
